@@ -1,0 +1,13 @@
+{
+	"name": "course-planner",
+	"version": "0.0.1",
+  	"description": "Course Planner",
+  	"author": "Alexander Gruschina <grusch.alex@gmail.com>",
+  	"main": "course-planner.js",
+	"scripts": {
+    "start": "node course-planner.js"
+	},
+	"devDependencies": {
+		"express": "~4.14.0"
+	}
+}
