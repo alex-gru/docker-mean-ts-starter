@@ -6,7 +6,7 @@ Course perspective and all relevant information can be [found here.](https://doc
 
 ## Build & Run
 
-1. Download and install Docker on your machine: [Docker Store](https://store.docker.com/search?type=edition&offering=community)
+1. Download and install `Docker` on your machine: [Docker Store](https://store.docker.com/search?type=edition&offering=community)
 
 2. Fork and clone this repository
 
