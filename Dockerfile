@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 
+RUN apt-get update -y
+RUN apt-get upgrade -y
+
 # Setup MongoDB
 # Import MongoDB public GPG key AND create a MongoDB list file
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
