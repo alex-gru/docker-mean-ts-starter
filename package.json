@@ -3,9 +3,13 @@
 	"version": "0.0.1",
   	"description": "Course Planner",
   	"author": "Alexander Gruschina <grusch.alex@gmail.com>",
+	"repository": "https://github.com/alex-gru/course-planner",
+	"license": "MIT",
   	"main": "course-planner.js",
 	"scripts": {
-    "start": "node course-planner.js"
+		"prestart": "mongod --dbpath='/data/db' &",
+		"start": "node course-planner.js",
+		"poststop": "mongod stop"
 	},
 	"devDependencies": {
 		"express": "~4.14.0"
