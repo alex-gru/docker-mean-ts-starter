@@ -22,7 +22,7 @@ Course perspective and all relevant information can be [found here.](https://doc
 
 5. Run the Docker image
 
-`docker run -d -p 8080:8080 course-planner`
+`docker run --name course-planner -d -p 8080:8080 course-planner`
 
 `-d` makes the container running in the background (use `docker stop course-planner` to stop)
 
