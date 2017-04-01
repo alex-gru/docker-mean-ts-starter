@@ -8,10 +8,11 @@
   	"main": "course-planner.js",
 	"scripts": {
 		"prestart": "mongod --dbpath='/data/db' &",
-		"start": "node course-planner.js",
+		"start": "nodemon -L /usr/src/app/",
 		"poststop": "mongod stop"
 	},
 	"devDependencies": {
-		"express": "~4.14.0"
+		"express": "~4.14.0",
+		"nodemon": "~1.11.0"
 	}
 }

@@ -20,13 +20,28 @@ Course perspective and all relevant information can be [found here.](https://doc
 
 `.` tells Docker to search for `Dockerfile` in the current directory
 
-5. Run the Docker image
+5. Run the application
 
-`docker run --name course-planner -d -p 8080:8080 course-planner`
+**Development only**:
+
+We use `docker-compose` ([docker-compose.yml]()) and `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
+
+`docker-compose up`
+
+This builds and creates the container, and attaches the debugger and file watcher (hot code reload), more details: [see here](https://docs.docker.com/compose/reference/up/)
+
+optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
+
+**Non-development environments**:
+
+`docker run --name course-planner -p 8080:8080 course-planner`
 
 `-d` makes the container running in the background (use `docker stop course-planner` to stop)
 
 `-p 8080:8080` maps the app-internal port 8080 to the external port 8080
+
+optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
+
 
 6. Display the app in your browser
 

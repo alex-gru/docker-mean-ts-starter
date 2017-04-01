@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    command: nodemon -L --debug=5858
+#    -L is very important here for use in a Docker container, see here: https://github.com/remy/nodemon#application-isnt-restarting
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8080:8080"
+      - "5858:5858"
+
+# as gratefully discovered here: https://github.com/docker/labs/blob/master/developer-tools/nodejs-debugging/VSCode-README.md
