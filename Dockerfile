@@ -17,6 +17,7 @@ RUN mkdir -p /data/db
 RUN apt-get install nodejs -y
 RUN apt-get install nodejs-legacy -y
 RUN apt-get install npm -y
+RUN npm install -g nodemon
 
 # Create app directory
 RUN mkdir -p /usr/src/app
