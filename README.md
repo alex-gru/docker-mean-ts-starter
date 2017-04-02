@@ -24,9 +24,15 @@ Course perspective and all relevant information can be [found here.](https://doc
 
 **Development only**:
 
-We use `docker-compose` ([docker-compose.yml]()) and `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
+First, install dependencies locally. 
 
-`docker-compose up`
+`npm install`
+
+Now, we run `docker-compose` ([docker-compose.yml]()) which runs `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
+
+`docker-compose up --build`
+
+`-build` rebuilds the image if changes are detected
 
 This builds and creates the container, and attaches the debugger and file watcher (hot code reload), more details: [see here](https://docs.docker.com/compose/reference/up/)
 
