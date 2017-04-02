@@ -3,8 +3,7 @@ version: "3"
 services:
   web:
     build: .
-    command: nodemon -L --debug=5858
-#    -L is very important here for use in a Docker container, see here: https://github.com/remy/nodemon#application-isnt-restarting
+    command: bash -c "./compose-scripts.sh"
     volumes:
       - .:/usr/src/app
     ports:
