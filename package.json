@@ -7,12 +7,13 @@
 	"license": "MIT",
   	"main": "course-planner.js",
 	"scripts": {
-		"prestart": "mongod --dbpath='/data/db' &",
-		"start": "nodemon -L /usr/src/app/",
+		"prestart": "mongod --port 27017 --dbpath='/data/db' &",
+		"start": "mongoimport --db db --collection data --file data.json && nodemon -L /usr/src/app/",
 		"poststop": "mongod stop"
 	},
 	"devDependencies": {
 		"express": "~4.14.0",
-		"nodemon": "~1.11.0"
+		"nodemon": "~1.11.0",
+		"mongoose": "~4.9.2"
 	}
 }
