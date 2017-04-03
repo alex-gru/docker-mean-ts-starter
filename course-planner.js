@@ -8,8 +8,11 @@ const PORT = 8080;
 
 // App
 const app = express();
+// provide paths to static files
+app.use("/js", express.static(__dirname + '/public/js'));
+
 app.get('/', function (req, res) {
-  res.sendFile( __dirname + "/" + "index.html" );
+  res.sendFile( __dirname + "/public/" + "index.html" );
   Data.find(function (err, data) {
     if (err) return console.error(err);
     log(data);

@@ -19,6 +19,9 @@ RUN apt-get install nodejs-legacy -y
 RUN apt-get install npm -y
 RUN npm install -g nodemon
 
+# Setup Typescript
+RUN npm install -g typescript
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
