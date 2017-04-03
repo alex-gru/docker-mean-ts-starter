@@ -19,8 +19,10 @@ RUN apt-get install nodejs-legacy -y
 RUN apt-get install npm -y
 RUN npm install -g nodemon
 
-# Setup Typescript
+# install typescript
 RUN npm install -g typescript
+# install pug
+RUN npm install -g pug
 
 # Create app directory
 RUN mkdir -p /usr/src/app
