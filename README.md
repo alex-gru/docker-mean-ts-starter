@@ -37,7 +37,7 @@ First, install dependencies locally.
 
 `npm install`
 
-Now, we run `docker-compose` ([docker-compose.yml]()) which runs `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
+Now, we run `docker-compose` ([docker-compose.yml](docker-compose.yml)) which runs `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
 
 `docker-compose up --build`
 
