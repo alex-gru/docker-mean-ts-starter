@@ -4,7 +4,7 @@ Project repository for the course `Selected Topics in Software Engineering`, Dep
 ## Project Plan
 Course perspective and all relevant information can be [found here.](https://docs.google.com/document/d/1RymleWm07xmH_LnFB5_LOq7yFwj1wB7OvTax7AeAAUc/edit?usp=sharing)
 
-## Build & Run
+## Non-Development: Build & Run
 
 1. Download and install `Docker` on your machine: [Docker Store](https://store.docker.com/search?type=edition&offering=community)
 
@@ -22,7 +22,16 @@ Course perspective and all relevant information can be [found here.](https://doc
 
 5. Run the application
 
-**Development only**:
+`docker run --name course-planner -p 8080:8080 course-planner`
+
+`-d` makes the container running in the background (use `docker stop course-planner` to stop)
+
+`-p 8080:8080` maps the app-internal port 8080 to the external port 8080
+
+optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
+
+
+## Development only: Build & Run & Debug & Hot-Code-Reload
 
 First, install dependencies locally. 
 
@@ -34,22 +43,12 @@ Now, we run `docker-compose` ([docker-compose.yml]()) which runs `nodemon` to en
 
 `-build` rebuilds the image if changes are detected
 
-This builds and creates the container, and attaches the debugger and file watcher (hot code reload), more details: [see here](https://docs.docker.com/compose/reference/up/)
-
-optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
-
-**Non-development environments**:
-
-`docker run --name course-planner -p 8080:8080 course-planner`
-
-`-d` makes the container running in the background (use `docker stop course-planner` to stop)
-
-`-p 8080:8080` maps the app-internal port 8080 to the external port 8080
+This builds and (re-)creates the container, and attaches the debugger and file watcher (auto-restart with `nodemon`).
 
 optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
 
 
-6. Display the app in your browser
+## Display the app in your browser
 
 [http://localhost:8080](http://localhost:8080)
 
