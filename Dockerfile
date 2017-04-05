@@ -24,6 +24,9 @@ RUN npm install -g typescript
 # install pug
 RUN npm install -g pug
 
+# install jshare for sharing node.js variables with client javascript
+RUN npm install -g jshare
+
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

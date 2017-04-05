@@ -1,6 +1,12 @@
+block config
+    include config
+
 doctype html
 html
     head
-        title my jade template
+        title #{title}
+        //access data served from backend
+        != JShare()
     body
-        h1 #{data}
+        block scripts.
+            script(src='/js/greeter.js')
