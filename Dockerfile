@@ -14,7 +14,9 @@ RUN apt-get update && apt-get install -y mongodb-org
 RUN mkdir -p /data/db
 
 # Setup node.js
-RUN apt-get install nodejs -y
+#RUN apt-get install curl
+#RUN curl -sL https://deb.nodesource.com/setup_7.x | bash
+#RUN apt-get install nodejs -y
 RUN apt-get install nodejs-legacy -y
 RUN apt-get install npm -y
 
@@ -22,6 +24,9 @@ RUN apt-get install npm -y
 RUN npm install -g nodemon
 RUN npm install -g typescript
 
+
+RUN node --version
+RUN nodemon --version
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
