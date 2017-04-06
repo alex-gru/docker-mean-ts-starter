@@ -4,7 +4,7 @@ class Greeter {
         return "<h1>" + this.greeting + "</h1>";
     }
 }
-//noinspection TypeScriptUnresolvedVariable (JShare shared variable)
-const greeter = new Greeter(jshare.text.text);
+//noinspection TypeScriptUnresolvedVariable (var in index)
+const greeter = new Greeter(text);
 
 document.body.innerHTML = greeter.greet();

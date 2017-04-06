@@ -4,7 +4,6 @@ const express = require('express');
 const mongoose = require("mongoose");
 const path = require('path');
 const pug = require('pug');
-const jshare = require('jshare');
 
 // Constants
 const PORT = 8080;
@@ -20,13 +19,9 @@ app.use("/views", express.static(__dirname + '/views'));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-// use jshare for sharing variables from nodejs with client javascript
-app.use(jshare());
-
 app.get('/', function (req, res) {
   Data.findOne(function (err, data) {
-    res.jshare.text = {text : data.text};
-    res.render('index', {title: "Course Planner"});
+    res.render('index', {title: "Course Planner", text: data.text});
   })
 });
 

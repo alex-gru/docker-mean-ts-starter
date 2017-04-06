@@ -5,8 +5,7 @@ doctype html
 html
     head
         title #{title}
-        //access data served from backend
-        != JShare()
     body
         block scripts.
+            script var text = '#{text}';
             script(src='/js/greeter.js')
