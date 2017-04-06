@@ -17,26 +17,21 @@ RUN mkdir -p /data/db
 RUN apt-get install nodejs -y
 RUN apt-get install nodejs-legacy -y
 RUN apt-get install npm -y
+
+# for development: auto-restart on changes in backend (nodejs), auto-recompile on changes in frontend (ts->js)
 RUN npm install -g nodemon
-
-# install typescript
 RUN npm install -g typescript
-# install pug
-RUN npm install -g pug
-
-# install jshare for sharing node.js variables with client javascript
-RUN npm install -g jshare
 
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
 
 # Install app dependencies
 ADD package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
+# file changes in . only lead to a rebuild which triggers only these remaining commands
 ADD . /usr/src/app
 
 EXPOSE 8080

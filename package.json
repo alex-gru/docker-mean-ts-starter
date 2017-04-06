@@ -8,12 +8,11 @@
   	"main": "course-planner.js",
 	"scripts": {
 		"prestart": "mongod --port 27017 --dbpath='/data/db' &",
-		"start": "mongoimport --db db --collection data --file data.json && nodemon -L /usr/src/app/",
+		"start": "mongoimport --db db --collection data --file data.json && node /usr/src/app/",
 		"poststop": "mongod stop"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"express": "~4.14.0",
-		"nodemon": "~1.11.0",
 		"mongoose": "~4.9.2",
 		"typescript": "~2.2.2",
 		"pug": "~2.0.0-beta11",

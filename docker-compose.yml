@@ -9,5 +9,3 @@ services:
     ports:
       - "8080:8080"
       - "5858:5858"
-
-# as gratefully discovered here: https://github.com/docker/labs/blob/master/developer-tools/nodejs-debugging/VSCode-README.md
