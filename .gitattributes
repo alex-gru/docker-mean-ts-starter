@@ -22,7 +22,7 @@
 *.html     text
 *.js       text
 *.json     text
-*.sh       text
+*.sh       text eol=lf
 *.sql      text
 *.ts       text
 *.xml      text
