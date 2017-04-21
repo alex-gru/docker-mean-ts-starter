@@ -3,9 +3,20 @@ version: "3"
 services:
   web:
     build: .
-    command: bash -c "./compose-scripts.sh"
     volumes:
       - .:/usr/src/app
     ports:
       - "8080:8080"
       - "5858:5858"
+    links:
+      - mongodb
+  mongodb:
+    image: mongo
+    volumes:
+      - /data/db:/data/db
+    ports:
+      - "27017:27017"
+  mongo-import:
+    build: ./mongo-import
+    links:
+      - mongodb

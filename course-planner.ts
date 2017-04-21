@@ -33,7 +33,7 @@ const server = app.listen(port, () => {
 
 if (mongoose.connection.readyState === 0) {
   /* 0 = disconnected, 1 = connected,  2 = connecting,  3 = disconnecting  */
-  mongoose.connect('mongodb://localhost:27017/db');
+  mongoose.connect('mongodb://mongodb:27017/db');
   mongoose.connection.on('connected', () => {
     log("Connection to MongoDB established.");
     Data = mongoose.model('Data',
