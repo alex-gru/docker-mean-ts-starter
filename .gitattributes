@@ -38,7 +38,12 @@
 .gitattributes text
 .gitconfig     text
 .gitignore     text
+.htaccess      text
+*.npmignore    text
+*.yaml         text
 *.yml          text
+Makefile       text
+makefile       text
 
 ## DOCKER
 .dockerignore       text
