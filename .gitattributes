@@ -1,0 +1,55 @@
+## GITATTRIBUTES FOR WEB PROJECTS
+#
+# These settings are for any web project.
+#
+# Details per file setting:
+#   text    These files should be normalized (i.e. convert CRLF to LF).
+#   binary  These files are binary and should be left untouched.
+#
+# Note that binary is a macro for -text -diff.
+######################################################################
+
+## AUTO-DETECT
+##   Handle line endings automatically for files detected as
+##   text and leave all files detected as binary untouched.
+##   This will handle all files NOT defined below.
+* text=auto
+
+## SOURCE CODE
+*.bat      text eol=crlf
+*.css      text
+*.htm      text
+*.html     text
+*.js       text
+*.json     text
+*.sh       text
+*.sql      text
+*.ts       text
+*.xml      text
+
+## DOCUMENTATION
+*.md         text
+*.txt        text
+
+## TEMPLATES
+*.pug       text
+
+## CONFIGS
+.gitattributes text
+.gitconfig     text
+.gitignore     text
+.htaccess      text
+*.npmignore    text
+*.yaml         text
+*.yml          text
+Makefile       text
+makefile       text
+
+## DOCKER
+.dockerignore       text
+DOCKERFILE       text
+
+## GRAPHICS
+*.jpg  binary
+*.pdf  binary
+*.png  binary
