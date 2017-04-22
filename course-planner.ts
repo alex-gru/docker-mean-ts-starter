@@ -1,4 +1,6 @@
 import * as express from "express";
+import * as http from "http";
+import * as reload from "reload";
 import * as mongoose from "mongoose";
 import * as path from "path";
 
@@ -23,10 +25,13 @@ app.get('/', (req, res) => {
   })
 });
 
-const server = app.listen(port, () => {
-  const host = server.address().address;
-  const port = server.address().port;
+const server = http.createServer(app);
 
+// Reload code here
+reload(server, app);
+
+server.listen(port, () => {
+  const host = server.address().address;
   console.log("Webapp listening at http://%s:%s", host, port)
 });
 

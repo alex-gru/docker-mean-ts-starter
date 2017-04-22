@@ -8,13 +8,15 @@
   	"main": "course-planner.js",
 	"scripts": {
 		"prestart": "tsc -w course-planner.ts public/js/greeter.ts &",
-		"start": "nodemon -L --debug=5858 /usr/src/app/"
+		"start": "nodemon -L --inspect /usr/src/app/"
 	},
 	"dependencies": {
 		"express": "~4.14.0",
-		"mongoose": "~4.9.2",
 		"typescript": "~2.2.2",
 		"pug": "~2.0.0-beta11",
-		"path": "~0.12.7"
+		"path": "~0.12.7",
+		"reload": "~1.1.2",
+		"http": "~0.0.0",
+		"mongoose": "~4.9.5"
 	}
 }

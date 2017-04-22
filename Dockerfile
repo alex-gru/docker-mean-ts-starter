@@ -3,6 +3,8 @@ FROM mhart/alpine-node:latest
 # for development: auto-restart on changes in backend (nodejs), auto-recompile on changes in frontend (ts->js)
 RUN npm install -g nodemon
 RUN npm install -g typescript
+# auto-reload browser on changes
+RUN npm install -g reload
 
 RUN node --version
 RUN nodemon --version
@@ -17,7 +19,5 @@ RUN npm install
 # Bundle app source
 # file changes in . only lead to a rebuild which triggers only these remaining commands
 ADD . /usr/src/app
-
-EXPOSE 8080
 
 CMD [ "npm", "start" ]
