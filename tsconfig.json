@@ -1,4 +1,11 @@
 {
+  "compilerOptions": {
+    "watch": true
+  },
+  "files": [
+    "course-planner.ts",
+    "public/js/greeter.ts"
+  ],
   "types": [
     "node",
     "angular"

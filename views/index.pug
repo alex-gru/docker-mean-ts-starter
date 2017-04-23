@@ -7,8 +7,9 @@ html
         title #{title}
     body
         block scripts.
-            script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js')
-    div(ng-app="greetingApp" ng-controller="greetingCtrl")
-        p {{ greeting + " " + firstName + " " + lastName }}
-        script const greeting = '#{greeting}';
+            script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js')
+            script(src='/reload/reload.js')
+        div(ng-app="greetingApp" ng-controller="greetingCtrl")
+            p {{ greeting + " " + firstName + " " + lastName }}
+        script const greeting = '#{greeting}'
         script(src='/js/greeter.js')

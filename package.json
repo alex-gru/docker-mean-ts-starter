@@ -7,7 +7,7 @@
 	"license": "MIT",
   	"main": "course-planner.js",
 	"scripts": {
-		"prestart": "tsc -w course-planner.ts public/js/greeter.ts &",
+		"prestart": "tsc &",
 		"start": "nodemon -L --debug /usr/src/app/"
 	},
 	"dependencies": {
