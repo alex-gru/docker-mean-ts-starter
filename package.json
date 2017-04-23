@@ -8,7 +8,7 @@
   	"main": "course-planner.js",
 	"scripts": {
 		"prestart": "tsc -w course-planner.ts public/js/greeter.ts &",
-		"start": "nodemon -L --inspect /usr/src/app/"
+		"start": "nodemon -L --debug /usr/src/app/"
 	},
 	"dependencies": {
 		"express": "~4.14.0",

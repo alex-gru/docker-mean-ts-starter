@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:latest
+FROM mhart/alpine-node:6
 
 # for development: auto-restart on changes in backend (nodejs), auto-recompile on changes in frontend (ts->js)
 RUN npm install -g nodemon
