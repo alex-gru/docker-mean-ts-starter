@@ -10,6 +10,11 @@ html
             script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js')
             script(src='/reload/reload.js')
         div(ng-app="greetingApp" ng-controller="greetingCtrl")
-            p {{ greeting + " " + firstName + " " + lastName }}
+            p
+                form
+                    label(for="name") Name:
+                    input(type="text" ng-model="name" id="name")
+            h1 {{ greeting + " " + name + "!" }}
+            p {{ description }}
         script const greeting = '#{greeting}'
         script(src='/js/greeter.js')
