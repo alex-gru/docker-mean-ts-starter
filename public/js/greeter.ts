@@ -1,10 +1,10 @@
-class Greeter {
-    constructor(public greeting: string) { }
-    greet() {
-        return "<h1>" + this.greeting + "</h1>";
-    }
-}
-//noinspection TypeScriptUnresolvedVariable (var in index)
-const greeter = new Greeter(text);
+declare var angular: any;   // angular library included in pug
+declare var greeting: any;  // defined in pug (in fact a template variable fed in node backend)
 
-document.body.innerHTML = greeter.greet();
+var app = angular.module("greetingApp", []);
+
+app.controller("greetingCtrl", ($scope) => {
+    $scope.greeting = greeting;
+    $scope.firstName = "Jane";
+    $scope.lastName = "Doe";
+});

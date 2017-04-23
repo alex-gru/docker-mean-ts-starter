@@ -18,16 +18,15 @@ app.use("/views", express.static(__dirname + '/views'));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-let Data;
+let Greeting;
 app.get('/', (req, res) => {
-  Data.findOne((err, data) => {
-    res.render('index', {title: "Course Planner", text: data.text});
+  Greeting.findOne((err, greeting) => {
+    res.render('index', {title: "Course Planner", greeting: greeting.text});
   })
 });
 
 const server = http.createServer(app);
 
-// Reload code here
 reload(server, app);
 
 server.listen(port, () => {
@@ -41,14 +40,13 @@ if (mongoose.connection.readyState === 0) {
   mongoose.connect('mongodb://mongodb:27017/db');
   mongoose.connection.on('connected', () => {
     log("Connection to MongoDB established.");
-    Data = mongoose.model('Data',
+    Greeting = mongoose.model('Greeting',
         new mongoose.Schema({text: String}),
-        'data');     // collection name
+        'greetings');     // collection name
   });
 }
 
 function log(message:any) {
   const date = new Date();
-  const time = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
-  console.log(time + " - ",message);
+  console.log(date.toISOString() + " - ",message);
 }

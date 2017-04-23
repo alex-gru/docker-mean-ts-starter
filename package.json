@@ -20,6 +20,7 @@
 		"mongoose": "~4.9.5"
 	},
 	"devDependencies": {
-		"@types/node": "~7.0.13"
+		"@types/node": "~7.0.13",
+		"@types/angular": "~1.6.15"
 	}
 }
