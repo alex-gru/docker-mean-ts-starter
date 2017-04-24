@@ -1,11 +1,11 @@
 {
-	"name": "course-planner",
+	"name": "docker-MEAN-ts-starter",
 	"version": "0.0.1",
-  	"description": "Course Planner",
+  	"description": "Starter project for a dockerized MEAN webapp with Typescript implementations and full support for hot code reload and debugging.",
   	"author": "Alexander Gruschina <grusch.alex@gmail.com>",
-	"repository": "https://github.com/alex-gru/course-planner",
+	"repository": "https://github.com/alex-gru/docker-MEAN-ts-starter",
 	"license": "MIT",
-  	"main": "course-planner.js",
+  	"main": "server.js",
 	"scripts": {
 		"prestart": "tsc &",
 		"start": "nodemon -L --debug /usr/src/app/"
@@ -15,9 +15,9 @@
 		"typescript": "~2.2.2",
 		"pug": "~2.0.0-beta11",
 		"path": "~0.12.7",
-		"reload": "~1.1.2",
 		"http": "~0.0.0",
-		"mongoose": "~4.9.5"
+		"mongoose": "~4.9.5",
+		"reload": "~1.1.2"
 	},
 	"devDependencies": {
 		"@types/node": "~7.0.13",

@@ -9,6 +9,9 @@ html
         block scripts.
             script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js')
             script(src='/reload/reload.js')
+        block styles.
+            link(rel='stylesheet', href='/css/styles.css')
+
         div(ng-app="greetingApp" ng-controller="greetingCtrl")
             p
                 form

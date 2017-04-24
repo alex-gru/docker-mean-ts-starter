@@ -12,6 +12,7 @@ const app = express();
 
 // provide paths to static files
 app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/css", express.static(__dirname + '/public/css'));
 app.use("/views", express.static(__dirname + '/views'));
 
 // view engine setup

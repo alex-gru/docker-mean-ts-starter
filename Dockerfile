@@ -12,6 +12,7 @@ RUN npm install -g reload
 ADD package.json .
 RUN npm install
 
+# Display used versions
 RUN node --version
 RUN nodemon --version
 

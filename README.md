@@ -1,26 +1,52 @@
-# course-planner
-Project repository for the course `Selected Topics in Software Engineering`, Dept. CS, University of Salzburg, Austria
+# Starter project for a dockerized MEAN webapp (+Typescript)
+This repository provides an out-of-the-box environment for a fully dockerized web application. 
 
-## Project Plan
-Course perspective and all relevant information can be [found here.](https://docs.google.com/document/d/1RymleWm07xmH_LnFB5_LOq7yFwj1wB7OvTax7AeAAUc/edit?usp=sharing)
+`CAUTION:` not production-ready yet!
 
-## Build & Run & Debug & Hot-Code-Reload
+## Application Stack
+![image](http://i65.tinypic.com/atvtl.jpg)
+
+* `Docker`, `docker-compose` app container platform
+* `Typescript` code frontend, backend
+* `MongoDB` document database
+* `Express` web server
+* `AngularJS` frontend js/ts framework
+* `Node.js` backend
+* `Pug` template engine for Node.js
+
+#### Call for PRs regarding Angular upgrade
+With this established environment, I could not get Angular (4) running, so I use AngularJS for now. 
+Any ideas would be appreciated - just create a PR.
+
+## Features
+zero downtime development with Docker, hot code reload, browser auto-refresh, debugging
+
+## Build & Run
 First, install dependencies locally. 
 
 `npm install`
 
-Now, we run `docker-compose` ([docker-compose.yml](docker-compose.yml)) which runs `nodemon` to enable debugging and auto restart on file changes (both front- and backend).
+Now, we run `docker-compose` ([docker-compose.yml](docker-compose.yml)) for orchestration of the 3 docker containers used:
 
+- `web` is the node.js web server (based on the slim [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/))
+- `mongo` is the mongoDB database (based on [mongo](https://hub.docker.com/_/mongo/))
+- `mongo-import` feeds the db in `mongo` with some dummy data (see sub-directory `mongo-import`, also based on [mongo](https://hub.docker.com/_/mongo/))
+
+##### docker-compose
 `docker-compose up --build`
 
 `-build` rebuilds the image if changes are detected
 
-This builds and (re-)creates the container, and attaches the debugger and file watcher (auto-restart with `nodemon`).
+This builds and (re-)creates the containers, and attaches the debugger and file watcher.
 
-optional: `-d` makes the container running in the background (use `docker stop course-planner` to stop)
+optional: `-d` makes the container running in the background (use `docker stop` to stop)
 
 
 ## Display the app in your browser
 
 [http://localhost:8080](http://localhost:8080)
+
+## Debug the dockerized node.js application
+The repository contains a `JetBrains` [debug configuration](.idea/runConfigurations/node_debug_5858.xml) which you can use with `WebStorm` for example. 
+See more details about remote node.js debugging [here](https://www.jetbrains.com/help/webstorm/2017.1/run-debug-configuration-node-js-remote-debug.html)
 

@@ -3,7 +3,7 @@
     "watch": true
   },
   "files": [
-    "course-planner.ts",
+    "server.ts",
     "public/js/greeter.ts"
   ],
   "types": [
