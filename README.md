@@ -26,18 +26,13 @@ First, install dependencies locally.
 
 `npm install`
 
-Now, we run `docker-compose` ([docker-compose.yml](docker-compose.yml)) for orchestration of the 3 docker containers used:
+Now, we run `docker-compose up --build` ([docker-compose.yml](docker-compose.yml)) for orchestration of the 3 docker containers used:
 
 - `web` is the node.js web server (based on the slim [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/))
 - `mongo` is the mongoDB database (based on [mongo](https://hub.docker.com/_/mongo/))
 - `mongo-import` feeds the db in `mongo` with some dummy data (see sub-directory `mongo-import`, also based on [mongo](https://hub.docker.com/_/mongo/))
 
-##### docker-compose
-`docker-compose up --build`
-
-`-build` rebuilds the image if changes are detected
-
-This builds and (re-)creates the containers, and attaches the debugger and file watcher.
+`-build` rebuilds the images if changes are detected
 
 optional: `-d` makes the container running in the background (use `docker stop` to stop)
 
