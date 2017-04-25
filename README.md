@@ -6,7 +6,7 @@ This repository provides an out-of-the-box environment for a fully dockerized we
 ## Application Stack
 ![image](http://i65.tinypic.com/atvtl.jpg)
 
-* `Docker`, `docker-compose` container platform / orchestration (webserver,db,db-import)
+* `Docker`, `docker-compose` container platform, orchestration
 * `Typescript` code frontend, backend
 * `MongoDB` document database
 * `Express` web server
