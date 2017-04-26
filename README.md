@@ -36,11 +36,11 @@ Now, we use `docker-compose` for orchestration of the 3 docker containers used:
 
 To separate development features from the actual application, three docker-compose configs are used.
 
-`base.yml` is the base config
+- `base.yml` is the base config
 
-`dev.yml` should only be used for development environment, since it mounts the project directory, starts file watchers, enables auto-restarts and exposes debugging ports
+- `dev.yml` should only be used for development environment, since it mounts the project directory, starts file watchers, enables auto-restarts and exposes debugging ports
 
-`prod.yml` production-safe config
+- `prod.yml` production-safe config
 
 ##### Run Production
 `docker-compose -f compose-base.yml -f compose-prod.yml up`
