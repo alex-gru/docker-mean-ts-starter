@@ -6,7 +6,7 @@ This repository provides an out-of-the-box environment for a fully dockerized we
 ## Application Stack
 ![image](http://i65.tinypic.com/atvtl.jpg)
 
-* `Docker`, `docker-compose` app container platform
+* `Docker`, `docker-compose` container platform, orchestration
 * `Typescript` code frontend, backend
 * `MongoDB` document database
 * `Express` web server
@@ -20,7 +20,6 @@ Any ideas would be appreciated - just create a PR.
 
 ## Features
 zero downtime development with Docker, hot code reload, browser auto-refresh, debugging
-
 
 ## Build & Run
 First, install dependencies locally. 
