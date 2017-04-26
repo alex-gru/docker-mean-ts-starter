@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  web:
+    volumes:  # mount project directory for development/debugging
+      - .:/usr/src/app
+    entrypoint: ["npm", "run", "startDebug"]
+    ports:
+      - "5858:5858"

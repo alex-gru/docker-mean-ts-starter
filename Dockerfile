@@ -19,5 +19,3 @@ RUN nodemon --version
 # Bundle app source
 # file changes in . only lead to a rebuild which triggers only these remaining commands
 ADD . /usr/src/app
-
-CMD [ "npm", "start" ]

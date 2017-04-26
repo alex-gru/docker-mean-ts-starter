@@ -7,8 +7,12 @@
 	"license": "MIT",
   	"main": "server.js",
 	"scripts": {
-		"prestart": "tsc &",
-		"start": "nodemon -L --debug /usr/src/app/"
+		"build": "tsc",
+		"build:watch": "tsc -w",
+		"serveDebug": "nodemon -L --debug /usr/src/app/",
+		"serve": "node /usr/src/app/",
+		"start": "concurrently \"npm run build\" \"npm run serve\"",
+		"startDebug": "concurrently \"npm run build:watch\" \"npm run serveDebug\""
 	},
 	"dependencies": {
 		"express": "~4.14.0",
@@ -20,6 +24,7 @@
 		"reload": "~1.1.2"
 	},
 	"devDependencies": {
+		"concurrently": "^3.2.0",
 		"@types/node": "~7.0.13",
 		"@types/angular": "~1.6.15"
 	}

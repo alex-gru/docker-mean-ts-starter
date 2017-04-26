@@ -21,23 +21,35 @@ Any ideas would be appreciated - just create a PR.
 ## Features
 zero downtime development with Docker, hot code reload, browser auto-refresh, debugging
 
+
 ## Build & Run
 First, install dependencies locally. 
 
 `npm install`
 
-Now, we run `docker-compose` ([docker-compose.yml](docker-compose.yml)) for orchestration of the 3 docker containers used:
+Now, we use `docker-compose` for orchestration of the 3 docker containers used:
 
 - `web` is the node.js web server (based on the slim [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/))
 - `mongo` is the mongoDB database (based on [mongo](https://hub.docker.com/_/mongo/))
 - `mongo-import` feeds the db in `mongo` with some dummy data (see sub-directory `mongo-import`, also based on [mongo](https://hub.docker.com/_/mongo/))
 
-##### docker-compose
-`docker-compose up --build`
+### Environments
+
+To separate development features from the actual application, three docker-compose configs are used.
+
+`base.yml` is the base config
+
+`dev.yml` should only be used for development environment, since it mounts the project directory, starts file watchers, enables auto-restarts and exposes debugging ports
+
+`prod.yml` production-safe config
+
+##### Run Production
+`docker-compose -f compose-base.yml -f compose-prod.yml up`
+
+##### Run Dev
+`docker-compose -f compose-base.yml -f compose-dev.yml up --build`
 
 `-build` rebuilds the image if changes are detected
-
-This builds and (re-)creates the containers, and attaches the debugger and file watcher.
 
 optional: `-d` makes the container running in the background (use `docker stop` to stop)
 
@@ -47,6 +59,6 @@ optional: `-d` makes the container running in the background (use `docker stop` 
 [http://localhost:8080](http://localhost:8080)
 
 ## Debug the dockerized node.js application
-The repository contains a `JetBrains` [debug configuration](.idea/runConfigurations/node_debug_5858.xml) which you can use with `WebStorm` for example. 
+The repository contains a [debug configuration](.idea/runConfigurations/node_debug_5858.xml) which you can use with `WebStorm` for example. 
 See more details about remote node.js debugging [here](https://www.jetbrains.com/help/webstorm/2017.1/run-debug-configuration-node-js-remote-debug.html)
 

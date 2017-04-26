@@ -1,7 +1,4 @@
 {
-  "compilerOptions": {
-    "watch": true
-  },
   "files": [
     "server.ts",
     "public/js/greeter.ts"
