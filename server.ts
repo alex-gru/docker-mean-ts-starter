@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 let Greeting;
 app.get('/', (req, res) => {
   Greeting.findOne((err, greeting) => {
-    res.render('index', {title: "Course Planner", greeting: greeting.text});
+    res.render('index', {title: "Dockerized MEAN Greeter", greeting: greeting.text});
   })
 });
 
