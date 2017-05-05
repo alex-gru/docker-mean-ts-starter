@@ -1,8 +1,6 @@
 # Starter project for a dockerized MEAN webapp (+Typescript)
 This repository provides an out-of-the-box environment for a fully dockerized web application. 
 
-`CAUTION:` not production-ready yet!
-
 ## Application Stack
 ![image](http://i65.tinypic.com/atvtl.jpg)
 
