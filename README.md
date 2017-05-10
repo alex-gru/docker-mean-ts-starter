@@ -10,7 +10,7 @@ This repository provides an out-of-the-box environment for a fully dockerized we
 * `Express` web server
 * `AngularJS` frontend js/ts framework
 * `Node.js` backend
-* `Pug` template engine for Node.js
+* `Pug` template engine, used for Angular component templates
 
 #### Call for PRs regarding Angular upgrade
 With this established environment, I could not get Angular (4) running, so I use AngularJS for now. 
