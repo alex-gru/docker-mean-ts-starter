@@ -19,6 +19,10 @@ Any ideas would be appreciated - just create a PR.
 ## Features
 zero downtime development with Docker, hot code reload, browser auto-refresh, debugging
 
+## Prerequisites
+
+[`Docker`](https://docs.docker.com/engine/installation/#supported-platforms) and [`Docker Compose`](https://docs.docker.com/compose/install/) are necessary.
+
 ## Build & Run
 First, install dependencies locally. 
 
